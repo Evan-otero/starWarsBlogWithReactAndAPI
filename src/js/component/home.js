@@ -9,6 +9,25 @@ import { Card } from "./Card.js";
 
 //create your first component
 export class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			delta: []
+		};
+	}
+
+	componentDidMount() {
+		fetch("https://swapi.co/api/people/")
+			.then(resp => {
+				if (resp.ok) {
+					return resp.json();
+				}
+			})
+			.then(data => {
+				this.setState({ delta: data });
+				console.log(this.state.delta);
+			});
+	}
 	render() {
 		return (
 			<div>
