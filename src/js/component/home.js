@@ -4,6 +4,8 @@ import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import { Socialmedia } from "./Socialmedia.js";
 import { Navbaritems } from "./Navbaritems.js";
+import { InfoNav } from "./InfoNav.js";
+import { Card } from "./Card.js";
 
 //create your first component
 export class Home extends React.Component {
@@ -13,7 +15,9 @@ export class Home extends React.Component {
 				<div className="header container-fluid">
 					<div className="headertop row">
 						<div className="socialmedialinks col-md-3">
-							<ul style={{ display: "flex" }}>
+							<ul
+								className="smlinkimgs"
+								style={{ display: "flex" }}>
 								<Socialmedia alpha="https://image.flaticon.com/icons/svg/1051/1051258.svg" />
 								<Socialmedia alpha="https://image.flaticon.com/icons/svg/1051/1051243.svg" />
 								<Socialmedia alpha="https://image.flaticon.com/icons/svg/1051/1051280.svg" />
@@ -50,10 +54,55 @@ export class Home extends React.Component {
 					</div>
 				</div>
 				<div className="content container">
-					<div className="maincontent row">
-						<div className="browsedatabank" />
-						<div className="col-md-2 browse" />
-						<div className="col-md-10 databank" />
+					<div className="maincontent">
+						<div className="browsedatabank">Browse Databank //</div>
+						<div className="row">
+							<div className="col-md-2 browse">
+								<ul className="browselist">
+									<InfoNav charlie="Browse" />
+									<InfoNav charlie="Characters" />
+									<InfoNav charlie="Planets" />
+								</ul>
+							</div>
+							<div className="col-md-10">
+								<div
+									className=" databank"
+									style={{ display: "flex" }}>
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+								</div>
+								<div
+									className=" databank"
+									style={{ display: "flex" }}>
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+								</div>
+								<div
+									className=" databank"
+									style={{ display: "flex" }}>
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+								</div>
+								<div
+									className=" databank"
+									style={{ display: "flex" }}>
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+									<Card />
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

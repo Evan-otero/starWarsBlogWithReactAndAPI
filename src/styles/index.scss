@@ -19,6 +19,10 @@ body{
     position: fixed;
 }
 
+.smlinkimgs{
+    height: 100%;
+}
+
 .smimages{
     height: 45px;
     width: 45px;
@@ -61,10 +65,12 @@ body{
 .navbaritems{
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .navbarli{
-    display:flex;
     list-style: none;
     border-style: ridge;
     border-width: 1px;
@@ -75,4 +81,44 @@ body{
     font-size: 20px;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.content{
+    position: relative;
+    top: 250px;
+    z-index: -1;
+}
+
+.browsedatabank{
+    font-size: 25px;
+    color: white;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: darkgray;
+    border-left: none;
+    border-right: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+
+}
+
+.infonavbarli{
+    list-style: none;
+    color: #a9a9a9;
+    font-size: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.browse{
+}
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 170px;
+    height: 180px;
 }
