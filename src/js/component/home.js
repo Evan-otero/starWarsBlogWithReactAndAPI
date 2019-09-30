@@ -12,7 +12,8 @@ export class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			delta: []
+			delta: [],
+			juliet: []
 		};
 	}
 
@@ -24,10 +25,20 @@ export class Home extends React.Component {
 				}
 			})
 			.then(data => {
-				this.setState({ delta: data });
-				console.log(this.state.delta);
+				this.setState({ delta: data.results });
+			});
+		fetch("https://swapi.co/api/planets/")
+			.then(resp => {
+				if (resp.ok) {
+					return resp.json();
+				}
+			})
+			.then(data => {
+				this.setState({ juliet: data.results });
+				console.log(this.state.juliet);
 			});
 	}
+
 	render() {
 		return (
 			<div>
@@ -84,41 +95,29 @@ export class Home extends React.Component {
 								</ul>
 							</div>
 							<div className="col-md-10">
-								<div
-									className=" databank"
-									style={{ display: "flex" }}>
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-									<Card />
+								<div className="row">
+									{this.state.delta.map((foxtrot, golf) => {
+										return (
+											<Card
+												echo={
+													this.state.delta[golf].name
+												}
+												key={golf}
+											/>
+										);
+									})}
 								</div>
-								<div
-									className=" databank"
-									style={{ display: "flex" }}>
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-								</div>
-								<div
-									className=" databank"
-									style={{ display: "flex" }}>
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-								</div>
-								<div
-									className=" databank"
-									style={{ display: "flex" }}>
-									<Card />
-									<Card />
-									<Card />
-									<Card />
-									<Card />
+								<div className="row">
+									{this.state.delta.map((kilo, lima) => {
+										return (
+											<Card
+												echo={
+													this.state.juliet[lima].name
+												}
+												key={lima}
+											/>
+										);
+									})}
 								</div>
 							</div>
 						</div>
