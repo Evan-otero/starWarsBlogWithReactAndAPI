@@ -13,7 +13,8 @@ export class Home extends React.Component {
 		super();
 		this.state = {
 			delta: [],
-			juliet: []
+			juliet: [],
+			romeo: []
 		};
 	}
 
@@ -38,6 +39,10 @@ export class Home extends React.Component {
 				console.log(this.state.juliet);
 			});
 	}
+
+	quebec = () => {
+		let temp = this.state.romeo;
+	};
 
 	render() {
 		return (
@@ -102,6 +107,13 @@ export class Home extends React.Component {
 												echo={
 													this.state.delta[golf].name
 												}
+												mike={
+													this.state.delta[golf]
+														.height
+												}
+												november="Name:"
+												oscar="Height:"
+												papa="cm"
 												key={golf}
 											/>
 										);
@@ -114,6 +126,12 @@ export class Home extends React.Component {
 												echo={
 													this.state.juliet[lima].name
 												}
+												mike={
+													this.state.juliet[lima]
+														.population
+												}
+												november="Name:"
+												oscar="Population:"
 												key={lima}
 											/>
 										);
